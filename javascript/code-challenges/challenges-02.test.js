@@ -51,10 +51,9 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  for (let i = 0; i < arr; i++){
-    Math.pow(2, arr);
+  for (let i = 0; i < arr.length; i++){
+    return Math.pow(2, arr[i]);
   }
-  return arr;
   // Solution code here...
 };
 
@@ -65,9 +64,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
+  const newArray = [];
+  arr.forEach(num => newArray.push(Math.pow(2, num)));
   // Solution code here...
-  arr.forEach(element => arr.push(Math.pow(2, arr)));
-  return arr;
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  arr.map(element => arr.push(Math.pow(2, arr)));
+  return arr.map(num => Math.pow(2, num));
   // Solution code here...
 };
 
@@ -92,8 +92,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  arr.map(element => String.charCodeAt(index));
-  return arr;
+  return arr.map(element => String.charCodeAt(element));
   // Solution code here...
 };
 
