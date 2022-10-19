@@ -83,7 +83,7 @@ const mapTwoToThe = (arr) => {
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* -------------------------------------------------------------                      -----------------------------------
 CHALLENGE 7 - Stretch Goal
 
 Write a function named charCode that, given an array of letters as an input, uses map to return a new array where each element is the result of the `charCodeAt` method on the original array element.
@@ -94,7 +94,10 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  return arr.map(element => element.charCodeAt());
+  return arr.map((letter => {
+    return letter.charCodeAt();
+  }));
+
   // Solution code here...
 };
 
@@ -123,6 +126,8 @@ Write a function named extractAbilities that, given the array of abilities, uses
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
+
+// snorlaxAbilities.abilities[0].ability.name
 
 const snorlaxAbilities = {
   abilities: [
@@ -157,6 +162,9 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
+  return arr.map((element)=>{
+    return ability.name
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
