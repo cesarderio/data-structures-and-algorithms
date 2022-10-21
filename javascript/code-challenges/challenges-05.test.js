@@ -152,7 +152,7 @@ return str.reduce((a,b)=> {
     return str;
   }, []);------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
+asdfdsfdsafdsfdsfdsfdsf
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
 
