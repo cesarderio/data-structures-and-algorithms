@@ -76,7 +76,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  return arr.sort((a,b) => a === b ? 0 : a > b ? 1 : -1);
+  return arr.sort((a,b) => a > b ? 0 : a > b ? 1 : -1);
   // Solution code here...
 };
 
@@ -118,7 +118,7 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  return arr.sort((a,b) => b.length - a.length);
+  return arr.sort((a,b) => a.length - b.length);
   // Solution code here...
 };
 
@@ -131,6 +131,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
+  return arr.sort((a,b) => a.toString().length - b.toString().length);
   // Solution code here...
 };
 
@@ -153,8 +154,11 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
+  return arr.sort((a,b) => a.lastName.localeCompare(b.lastName));
   // Solution code here...
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
@@ -167,8 +171,24 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort((a,b) => a.lastName === b.lastName ? a.firstName.localeCompare(b.firstName) : a.firstName === b.firstName || a.lastName === b.lastName ? a.age - b.age : a.lastName.localeCompare(b.lastName));
 };
+
+/*
+  return arr.sort((a,b) =>
+  {
+    if(a.lastName === b.lastName){
+      return a.firstName.localeCompare(b.firstName);
+    } else if(a.firstName === b.firstName || a.lastName === b.lastName){
+      return a.age - b.age;
+    } else{
+      return a.lastName.localeCompare(b.lastName);
+    }
+  });
+  return arr.sort((a,b) => a > b ? 0 : a > b ? 1 : -1);
+  return arr.sort((a,b) => a.lastName.localeCompare(b.lastName));
+  return arr.sort((a,b) => a === b ? 0 : a > b ? 1 : -1);
+  */
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
@@ -193,6 +213,15 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
+  let daysOfWeek = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4,
+  };
+  return arr.sort((a,b) => daysOfWeek[a.dayOfWeek] - daysOfWeek[b.dayOfWeek]);
+
   // Solution code here...
 };
 
@@ -300,7 +329,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
@@ -308,7 +337,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
@@ -341,7 +370,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
