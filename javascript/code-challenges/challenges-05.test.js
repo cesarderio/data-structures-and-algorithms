@@ -142,12 +142,17 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
+  return str.split('').reduce((a,b)=> b + a, '');
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+return str.reduce((a,b)=> {
+    [b,...a];
+    return str;
+  }, []);------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
+asdfdsfdsafdsfdsfdsfdsf
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
 
