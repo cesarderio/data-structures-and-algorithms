@@ -147,10 +147,7 @@ const reversedString = (str) => {
 };
 
 /*
-return str.reduce((a,b)=> {
-    [b,...a];
-    return str;
-  }, []);------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
@@ -200,19 +197,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  return arr.reduce((sum, a)=> (sum = sum[a.chilren] + 1 || 1, sum),{});
-  /*  sum = sum + a.children, 0).map(characters => characters.children); */
+  arr.reduce((a,b)=> {
+    b.children ? a + b.children.length : a;
+    return a;
+  }, 0);
   // Solution code here...
 };
 
 /*
- return (
-        sum[a] ? ++count[a] : (sum[a] = 1),
-        count
-    );
-},
-{});
-return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name);
 ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
