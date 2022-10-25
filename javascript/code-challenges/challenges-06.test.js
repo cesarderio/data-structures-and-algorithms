@@ -23,7 +23,7 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  return arr.map((a) => a.split('').reverse().join(''));
+  return arr.map((a) => a.name.split('').reverse().join(''));
   // Solution code here...
 };
 
@@ -57,7 +57,11 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // arr.map((a)=>);
+  var a = arr[0];
+  arr.pop;
+  arr.push(a);
+  return arr;
+
   // Solution code here...
 };
 
