@@ -35,11 +35,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  const newArray = [];
-  str.forEach(element => {
-    newArray.push(element + 'The End');
-    return newArray;
-  });
+  return str.push(str +' The End');
   // Solution code here...
 };
 
