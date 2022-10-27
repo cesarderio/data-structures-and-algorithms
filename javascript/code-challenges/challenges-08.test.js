@@ -53,12 +53,23 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
+  charArray.sort((a,b) => a.children.length < b.children.length ? -1 : 1);
+  charArray.sort((a,b) => a.children.length === b.children.length ? -1 : 0);
+  return charArray;
 
-  return charArray.sort((a,b) => a.children.localeCompare(b.children));
+
+
+  // return charArray.sort((a,b)=> a.children === b.children ? a.children-b.children : a.children.localeCompare(b.children));
+
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+return charArray.sort((a,b) => a.children - b.children);
+
+ return charArray.sort((a,b) => a.children.localeCompare(b.children));
+
+------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
@@ -88,16 +99,20 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let nums = /[0-9]+$/g;
-  if(input.match(nums)){
-    return true;
-  }else{
-    return false;
-  }
+  return /\d/.test(input);
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+let newArr = [];
+let regex = /[0-9]+$/g;
+input.forEach(str => {
+  if(regex.test(str)){
+    newArr.push(str);
+  }
+});
+return newArr;
+ ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
@@ -145,14 +160,6 @@ const citiesAtoJ = (arr) => {
     }
   });
   return newArray;
-
-
-  // const aJ = /^[A-J][a-j]+$/g;
-  // if(arr.match(aJ)){
-  //   return true;
-  // }else{
-  //   return false;
-  // }
   // Solution code here...
 };
 
