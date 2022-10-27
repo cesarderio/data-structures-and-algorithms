@@ -175,19 +175,7 @@ const sortPeopleBetter = (arr) => {
 };
 
 /*
-  return arr.sort((a,b) =>
-  {
-    if(a.lastName === b.lastName){
-      return a.firstName.localeCompare(b.firstName);
-    } else if(a.firstName === b.firstName || a.lastName === b.lastName){
-      return a.age - b.age;
-    } else{
-      return a.lastName.localeCompare(b.lastName);
-    }
-  });
-  return arr.sort((a,b) => a > b ? 0 : a > b ? 1 : -1);
-  return arr.sort((a,b) => a.lastName.localeCompare(b.lastName));
-  return arr.sort((a,b) => a === b ? 0 : a > b ? 1 : -1);
+
   */
 
 /* ------------------------------------------------------------------------------------------------
