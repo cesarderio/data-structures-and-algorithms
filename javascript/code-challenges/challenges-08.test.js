@@ -53,7 +53,8 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  return charArray.sort((a,b) => a.children.localeCompare(b.lastName));
+
+  return charArray.sort((a,b) => a.children.localeCompare(b.children));
   // Solution code here...
 };
 
@@ -65,7 +66,7 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  const w = /^[w]+$/;
+  const w = /[w]+/;
   if(str.match(w)){
     return true;
   }else{
@@ -87,7 +88,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  if(input.match(/^[0-9]+$/)){
+  let nums = /[0-9]+$/g;
+  if(input.match(nums)){
     return true;
   }else{
     return false;
@@ -103,7 +105,7 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  const world = /^[world]+$/;
+  const world = /world+$/g;
   if(input.match(world)){
     return true;
   }else{
@@ -121,12 +123,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const cap = /^(?:[A-Z][a-z]+[\s-]*)+$/;
-  if(str.match(cap)){
-    return true;
-  }else{
-    return false;
-  }
+  return str.match(/[A-Z][a-z]+/g) || [];
+
+  // let cap = /^[A-Z][a-z]+$/;
+  // return str.match(cap) ? true : false;
   // Solution code here...
 };
 
@@ -137,12 +137,22 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  const aJ = /^[A-J][a-j]+$/;
-  if(arr.match(aJ)){
-    return true;
-  }else{
-    return false;
-  }
+  let newArray = [];
+  let regex = /^[A-J][a-z]+/;
+  arr.forEach(str => {
+    if(regex.test(str)){
+      newArray.push(str);
+    }
+  });
+  return newArray;
+
+
+  // const aJ = /^[A-J][a-j]+$/g;
+  // if(arr.match(aJ)){
+  //   return true;
+  // }else{
+  //   return false;
+  // }
   // Solution code here...
 };
 
