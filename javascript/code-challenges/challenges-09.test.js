@@ -124,8 +124,6 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   arr.forEach((e) =>{
-
-    console.log(e.house);
     houses.push(e.house);
   });
   // Solution code here...
@@ -145,10 +143,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  return Object.values(character).length > 0 ? true :false;
-  // Solution code here...
-
+  let children = 0;
+  arr.forEach(a => {
+    if(a.name === character){
+      Object.keys(a).forEach((key,index) => {
+        if(key === 'children'){
+          children = Object.values(a)[index].length;
+        }
+      });
+    }
+  });
+  return children ? true : false;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
