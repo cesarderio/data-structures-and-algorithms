@@ -1,0 +1,7 @@
+{
+  "prettier.printWidth": 100,
+  "editor.minimap.maxColumn": 20,
+  "editor.wordWrapColumn": 100,
+  "editor.minimap.size": "fit",
+  "editor.minimap.autohide": true
+}

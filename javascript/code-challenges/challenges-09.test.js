@@ -135,6 +135,10 @@ CHALLENGE 6
 
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
 
+** Object.values - arr of [value of arrays]
+** input: arr - [{...},{...},{...}] & character name
+** output: boolean
+
 This function should take in an array of data and a character name and return a Boolean.
 
 For example:

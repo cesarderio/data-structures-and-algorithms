@@ -170,7 +170,6 @@ const extractAbilities = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
 Use the snorlaxStats data, below, for this challenge.
 
 Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
@@ -178,7 +177,8 @@ Write a function named extractStats that, given an array of stats, uses map to r
 The total should be the sum of the effort and the baseStat.
 
 Here is an example of a single array element: { name: 'speed', total: 35 }
------------------------------------------------------------------------------------------------- */
+----------------------------------------------------------------------
+-------------------------- */
 
 const snorlaxStats = {
   stats: [
@@ -213,14 +213,20 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
-  return arr.map((element)=> {
-   element = element.name;
-/*    element.total = element.effort + element.baseStat; */
+  let total = element.effort + element.baseStat
 
+  return arr.map((element)=> {
+element.name, total
   })
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*    element.total = element.effort + element.baseStat; */
+/*  return arr.map((element)=> element.ability.name);
+Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
+The total should be the sum of the effort and the baseStat.
+
+Here is an example of a single array element: { name: 'speed', total: 35 }
+------------------------------------------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
