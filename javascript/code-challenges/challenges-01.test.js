@@ -58,10 +58,6 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  /*
-  const newArray = [];
-  word.forEach(element => newArray.push(element.toUpperCase() + '!'));
-  return newArray; */
   return word.toUpperCase() + '!';
   // Solution code here...
 };
