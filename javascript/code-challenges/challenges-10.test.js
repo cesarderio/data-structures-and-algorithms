@@ -36,13 +36,7 @@ const findMax = (matrix) => {
       newArray.push(parseInt(number));
     });
   });
-  // console.log(newArray.flat());
-
-  // console.log(Math.max(...newArray));
-  // console.log(parseInt(Math.max(newArray.flat())));
   return Math.max(...newArray);
-  // return Math.max(newArray);
-  // console.log(parseInt(newArray));
   // Solution code here...
 };
 
@@ -70,7 +64,6 @@ const totalSum = (matrix) => {
     });
 
   });
-
   return newArray;
   // Solution code here...
 };
@@ -124,27 +117,23 @@ stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-
-  data.forEach(a => {
-    a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
-    return {
-      sales: data
-    };
+  Object.values(data, hours).forEach((data, hours) => {
+    console.log(`sales: ${data} cookies,time: ${hours}`);
   });
-  hours.forEach(a => {
-    a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
-    console.log(hours);
-    return {
-      time: `time: ${hours}`
-    };
-  });
-
-
-  // hours.forEach((a) => {
-  //   a.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 
   // Solution code here...
 };
+  // salesData.forEach((hours, data) => {
+  //   (`{ ...sales, 'time:' hours}`), {};
+  //   console.log('sales:' + data + ',' + 'time:' + hours);
+  // hours.forEach(a => {
+  //   a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
+  //   console.log(hours);
+  //   return {
+  //     time: `time: ${hours}`
+  // hours.forEach((a) => {
+  //   a.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
+
 
 /*
 
@@ -170,7 +159,9 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  Object.values(arr[2].items[1]);
+  // console.log(
+  return Object.values(arr[2].items[1]).pop();
+  // );
   // Solution code here...
 };
 
@@ -323,7 +314,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
