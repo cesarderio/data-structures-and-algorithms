@@ -69,11 +69,8 @@ const totalSum = (matrix) => {
       newArray += number;
     });
 
-    // newArray.push(matrix.flat().reduce((a, b)=> a + b));
-    // return matrix.flat().reduce((a, b)=> a + b);
   });
-  // console.log(matrix.flat().reduce((a, b)=> a + b));
-  // consolelog.(newArray);
+
   return newArray;
   // Solution code here...
 };
@@ -102,25 +99,56 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+  return stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
+  // for(let i in stores){
+  //   let soldPerHr = [];
+  //   for(let j in stores[i]){
+  //     soldPerHr += stores[j][i];
+  //   }
+  //   console.log(soldPerHr);
+  // }
   // Solution code here...
 
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
+expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
+      { sales: '88 cookies', time: '9 a.m.' },
 
 Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour and the time.
 
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
+stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+
+  data.forEach(a => {
+    a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
+    return {
+      sales: data
+    };
+  });
+  hours.forEach(a => {
+    a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
+    console.log(hours);
+    return {
+      time: `time: ${hours}`
+    };
+  });
+
+
+  // hours.forEach((a) => {
+  //   a.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
+
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+
+------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
@@ -142,6 +170,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
+  Object.values(arr[2].items[1]);
   // Solution code here...
 };
 
@@ -294,7 +323,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
