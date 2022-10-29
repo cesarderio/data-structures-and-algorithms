@@ -123,23 +123,12 @@ const salesData = (hours, data) => {
       sales: `${data} cookies`,
       time: hours[i]});
   });
-  console.log(newArray);
+  // console.log(newArray);
   return newArray;
-  // console.log(`sales: '${data} cookies`, `time: '${hours} a.m.'`);
+
 
   // Solution code here...
 };
-  // salesData.forEach((hours, data) => {
-  //   (`{ ...sales, 'time:' hours}`), {};
-  //   console.log('sales:' + data + ',' + 'time:' + hours);
-  // hours.forEach(a => {
-  //   a.reduce((acc, arr) => acc.map((sum,i)=> sum + arr[i]));
-  //   console.log(hours);
-  //   return {
-  //     time: `time: ${hours}`
-  // hours.forEach((a) => {
-  //   a.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
-
 
 /*
 
