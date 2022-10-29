@@ -117,9 +117,11 @@ stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  let newArray = [{}];
-  Object.values(data, hours).forEach((data, hours) => {
-    newArray.push([`sales: ${data} cookies`, `time: ${hours} a.m.`]);
+  let newArray = [];
+  data.forEach((data, i) => {
+    newArray.push({
+      sales: `${data} cookies`,
+      time: hours[i]});
   });
   console.log(newArray);
   return newArray;
