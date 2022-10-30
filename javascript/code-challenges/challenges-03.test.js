@@ -107,9 +107,9 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  return arr.filter(int => ( int.minBaseStat > int));
+  return arr.filter(element => element.baseStat > minBaseStat);
 
-  /*  return arr.filter(element => element.basesStat > minBaseStat).map(element => element.stat.name); */
+  /*  return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name); */
   // Solution code here...
 };
 
@@ -182,6 +182,9 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
+//   return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name);
+// };
+  return arr.filter(element => !element.children );
   // Solution code here...
 };
 
@@ -265,7 +268,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -297,7 +300,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
