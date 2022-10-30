@@ -117,17 +117,14 @@ stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+  // Solution code here...
   let newArray = [];
   data.forEach((data, i) => {
     newArray.push({
       sales: `${data} cookies`,
       time: hours[i]});
   });
-  // console.log(newArray);
   return newArray;
-
-
-  // Solution code here...
 };
 
 /*

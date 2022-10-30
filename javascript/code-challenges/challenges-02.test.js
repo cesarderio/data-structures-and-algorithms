@@ -213,18 +213,14 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
-  // let total = a.effort + a.baseStat
-  // console.log(arr.effort);
-  return arr.map((a)=> a = [(`name: ${a.stat.name}, total: ${a.effort + a.baseStat}`)]);
+  return arr.map((a)=> a = {
+    name: `${a.stat.name}`,
+    total: a.effort + a.baseStat,
+  })
 
 };
 
-/*    element.total = element.effort + element.baseStat; */
-/*  return arr.map((element)=> element.ability.name);
-Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
-The total should be the sum of the effort and the baseStat.
-
-Here is an example of a single array element: { name: 'speed', total: 35 }
+/*
 ------------------------------------------------------------------------------------------------
 TESTS
 
@@ -323,7 +319,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
