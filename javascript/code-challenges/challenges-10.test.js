@@ -57,6 +57,7 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
+  // return matrix.flat().reduce((acc, curVal) => acc + curVal);
   let newArray = 0;
   matrix.forEach(nestedArr => {
     nestedArr.forEach(number => {
@@ -67,7 +68,6 @@ const totalSum = (matrix) => {
   return newArray;
   // Solution code here...
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -93,27 +93,17 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   return stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
-  // for(let i in stores){
-  //   let soldPerHr = [];
-  //   for(let j in stores[i]){
-  //     soldPerHr += stores[j][i];
-  //   }
-  //   console.log(soldPerHr);
-  // }
   // Solution code here...
-
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
-      { sales: '88 cookies', time: '9 a.m.' },
 
 Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour and the time.
 
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
-stores.reduce((acc, arr) => acc.map((sum, i) => sum + arr[i]));
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
@@ -128,7 +118,6 @@ const salesData = (hours, data) => {
 };
 
 /*
-
 ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -151,9 +140,18 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // console.log(
+  // let treats = 0;
+  // arr.forEach(obj => {
+  //   let itemsArr = obj.items;
+  //   itemsArr.forEach(itemObj => {
+  //     if(itemObj.name === 'Treats'){
+  //       treats = itemObj.quantity;
+  //     }
+  //   });
+  // });
+
+  // return treats;
   return Object.values(arr[2].items[1]).pop();
-  // );
   // Solution code here...
 };
 
