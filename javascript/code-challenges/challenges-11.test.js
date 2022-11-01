@@ -21,13 +21,17 @@ Becomes:
 function transformToLis(obj){
   const li = document.createElement('li');
   const ul = document.querySelector('ul');
-  for (const [name, age] of Object.entries(obj)){
-    li.innerHTML = `name: ${name} `;
-    li.innerHTML = `age: ${age} `;
-    // ul.appendChild(li);
-  }
-  Object.entries(obj).map(e => []);
-    [+e[0], e[1]]);
+  // for (const [name, age] of Object.entries(obj)){
+  //   li.innerHTML = `name: ${name} `;
+  //   li.innerHTML = `age: ${age} `;
+  //   // ul.appendChild(li);
+  // }
+  Object.entries(obj).map(e => {
+    [
+      li.innerHTML = `name: ${e[0]}`,
+      li.innerHTML = `age: ${e[1]}`
+    ];});
+  // [+e[0], e[1]]);
   // for (let i = 0; i < obj.length; i++) {
   //   li.innerHTML = `name: ${obj.name}, age: ${obj.age} `;
   //   ul.appendChild(li);
@@ -54,6 +58,8 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
+  return target.flat().map(input => input === target ? + 1 : 0);
+
 
   // Solution code here...
 };
@@ -69,6 +75,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
+  return input.flat().reduce((acc, curVal) => acc + curVal);
   // Solution code here...
 };
 
@@ -85,6 +92,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
+  // input.map(a => a % 2 === 0 && isFinite() || a !% 5 ? : );
   // Solution code here...
 };
 
