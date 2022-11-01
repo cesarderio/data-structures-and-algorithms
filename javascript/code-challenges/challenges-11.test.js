@@ -92,6 +92,10 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
+  return input.map(nestedArr => {
+    return nestedArr.filter(element => element % 5 === 0 && typeof element === 'number').map(filteredElem => Math.pow(2, filteredElem));
+  });
+  // (2 ** filteredElem)
   // input.map(a => a % 2 === 0 && isFinite() || a !% 5 ? : );
   // Solution code here...
 };
@@ -159,8 +163,14 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
+  // data.filter(by gender).map(pull out names).join(to show names)
+
+  // return input.map(nestedArr => {
+  //   return nestedArr.filter(element => element % 5 === 0 && typeof element === 'number').map(filteredElem => Math.pow(2, filteredElem));
+  // });
 
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
