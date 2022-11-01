@@ -170,7 +170,9 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  return data.map(a => a.height).reduce((acc, curVal) => acc < curVal ? a.name)
+  return data.map(a => a = a.height).reduce((min, currentValue) => Math.min(min, currentValue), data[0]);
+
+  // return data.map(a => a.height).reduce((acc, curVal) => acc < curVal ? a.name)
   // Solution code here...
 };
 
