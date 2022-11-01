@@ -19,8 +19,29 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
+  const li = document.createElement('li');
+  const ul = document.querySelector('ul');
+  for (const [name, age] of Object.entries(obj)){
+    li.innerHTML = `name: ${name} `;
+    li.innerHTML = `age: ${age} `;
+    // ul.appendChild(li);
+  }
+  Object.entries(obj).map(e => []);
+    [+e[0], e[1]]);
+  // for (let i = 0; i < obj.length; i++) {
+  //   li.innerHTML = `name: ${obj.name}, age: ${obj.age} `;
+  //   ul.appendChild(li);
+  // }
+
+  // Object.entries(obj).map(e => , e[1]]);
+  // Object.entries((obj)=> {
+  //   return {
+  //     <li>name: obj.name</li>
+  //     <li>age: obj.age</li>
+  //   }
+  // })
   // Solution code here...
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,6 +54,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
+
   // Solution code here...
 };
 
