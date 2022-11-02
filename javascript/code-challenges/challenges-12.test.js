@@ -7,6 +7,12 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
+  // string.map(e => e = /[0]+/g);
+  // console.log(string.replace(/0*\d/g, 'zero'));
+  // return string.replace(/0*\d/g, 'zero');
+  return string.replace(/[0]+/g, 'zero');
+  // string.replaceAll('/[0]+/g', 'zero');
+
   // Solution code here...
 };
 
@@ -19,6 +25,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
+  // /^(\d{4})$/.test(pin) && Number.isInteger ? true : false;
+  console.log(/^\d+$/.test(pin) && (pin.length === 4) ? true : false);
+  return /^\d+$/.test(pin) && (pin.length === 4) ? true : false;
   // Solution code here...
 };
 
