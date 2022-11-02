@@ -41,6 +41,10 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
+  // let reg = /^(?=.{5,10}$).*\D+/gm;
+  let reg = /^\D{5,10}$/ ;
+  return reg.test(word);
+  // return /^(?=.{5,10}$).*\D+/gm.test(word);
   // Solution code here...
 };
 
