@@ -26,8 +26,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // /^(\d{4})$/.test(pin) && Number.isInteger ? true : false;
-  console.log(/^\d+$/.test(pin) && (pin.length === 4) ? true : false);
-  return /^\d+$/.test(pin) && (pin.length === 4) ? true : false;
+  let reg = /^\d{4}$/;
+  // console.log(/^\d+$/.test(pin) && (pin.length === 4) ? true : false);
+  return reg.test(pin);
   // Solution code here...
 };
 
