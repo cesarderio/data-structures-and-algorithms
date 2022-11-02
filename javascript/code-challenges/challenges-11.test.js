@@ -66,8 +66,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  return target.flat().filter((input) => (input === target ? +1 : 0));
-
+  let newArr = input.flat().filter((input) => (input === target ? +1 : 0));
+  return newArr.length;
+  // return input.flat().filter((input) => (input === target ? +1 : 0));
+  // console.log(target.flat().reduce((input, target) => (input === target ? +1 : 0)));
+  // console.log(target.filter((input)=> input === target ? +1 : 0));
   // Solution code here...
 };
 
@@ -201,8 +204,14 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  console.log(data.map((a) => a = a.height));
-  console.log(data.map((a) => a = a.name));
+  // let newArr =
+  // data.reduce();
+  // console.log(data.map(a => a.height).reduce((acc, curVal) => acc < curVal ? a[0]));
+  // console.log(data.map((a) => a = a.height));
+  // console.log(data.map((a) => a = a.name));
+  return data.reduce((min, currentValue) => {
+    return Number(currentValue.height) < Number(min.height) ? currentValue : min;
+  }).name;
 };
   // return data
   //   .map((a) => (a = a.height))
