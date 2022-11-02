@@ -7,6 +7,12 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
+  // string.map(e => e = /[0]+/g);
+  // console.log(string.replace(/0*\d/g, 'zero'));
+  // return string.replace(/0*\d/g, 'zero');
+  return string.replace(/[0]+/g, 'zero');
+  // string.replaceAll('/[0]+/g', 'zero');
+
   // Solution code here...
 };
 
@@ -19,6 +25,10 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
+  // /^(\d{4})$/.test(pin) && Number.isInteger ? true : false;
+  let reg = /^\d{4}$/;
+  // console.log(/^\d+$/.test(pin) && (pin.length === 4) ? true : false);
+  return reg.test(pin);
   // Solution code here...
 };
 
@@ -31,6 +41,10 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
+  // let reg = /^(?=.{5,10}$).*\D+/gm;
+  let reg = /^\D{5,10}$/ ;
+  return reg.test(word);
+  // return /^(?=.{5,10}$).*\D+/gm.test(word);
   // Solution code here...
 };
 
@@ -43,6 +57,8 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
+  let reg = /[a-zA-Z][0-9]+/;
+  return reg.test(string);
   // Solution code here...
 };
 
@@ -63,6 +79,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
+  let reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // let reg = /@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"/;
+  return reg.test(email);
   // Solution code here...
 };
 
@@ -88,10 +107,15 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
+  let reg = /^(\((\d{3})\)[\s]?|(\d{3})[\s-]?)(\d{3})[\s-]?(\d{4})$/;
+  return reg.test(phoneNumber);
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+let reg = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+  let reg = /^(\(?[0-9]{3}\)?)((\s|-){1})?[0-9]{3}((\s|-){1})?[0-9]{4}$/;
+------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
 Write a function named findTagNames that iterates over an array of HTML strings and uses a regular expression pattern to return the closing tags.
