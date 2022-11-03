@@ -9,7 +9,7 @@ Write a function named longestString that takes in an array of strings and retur
 const longestString = (arr) => {
   let newArr = [];
   // return arr.findIndex(arr.reduce((a, b) => a.length <= b.length ? b : a)).findIndex();
-  arr.reduce((a, b) => a.length <= b.length ? b : a);
+  return arr.indexOf((arr)=>(arr.reduce((a, b) => a.length <= b.length ? b : a)));
   // console.log(newArr);
   // Solution code here...
 };
@@ -47,7 +47,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  return arr.filter((e)=> e.includes(':'));
+  return arr.filter((e)=> e.includes(':)'));
   // arr.includes(':');
   // Solution code here...
 };
