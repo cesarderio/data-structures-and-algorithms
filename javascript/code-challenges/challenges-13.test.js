@@ -7,17 +7,22 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-  return arr.reduce((a, b) => a.length <= b.length ? b : a);
-  // return Math.max(arr).reduce((a, b) => a.length <= b.length ? b : a);
-  // return arr.reduce((a, b) => a.length > b.length ? a : b);
-  // return (Math.max(arr));
-  // console.log(arr.index(Math.max(...(arr.map(el => el.length)))));
-  // return arr.reduce((a, b) => a.length > b.length ? a : b).indexOf(arr);
-  // console.log(arr.reduce((a, b) => a.length > b.length ? a : b).indexOf(arr));
-// Solution code here...
+  let newArr = [];
+  // return arr.findIndex(arr.reduce((a, b) => a.length <= b.length ? b : a)).findIndex();
+  arr.reduce((a, b) => a.length <= b.length ? b : a);
+  // console.log(newArr);
+  // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+
+return Math.max(arr).reduce((a, b) => a.length <= b.length ? b : a);
+return arr.reduce((a, b) => a.length > b.length ? a : b);
+return (Math.max(arr));
+console.log(arr.index(Math.max(...(arr.map(el => el.length)))));
+return arr.reduce((a, b) => a.length > b.length ? a : b).indexOf(arr);
+console.log(arr.reduce((a, b) => a.length > b.length ? a : b).indexOf(arr));
+--------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named firstLetters that takes in an array of strings and returns an array containing only the first letter of each string.
@@ -26,9 +31,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
+  return arr.map(word => word[0]);
   // console.log( arr.charCodeAt(0) );
-  arr.forEach(element => element.charAt(0));
-  return arr.charAt(arr[0]);
+  // arr.forEach(element => element.charAt(0));
+  // return arr.charAt(arr[0]);
   // Solution code here...
 };
 
