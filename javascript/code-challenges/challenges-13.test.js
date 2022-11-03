@@ -41,6 +41,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
+  return arr.filter((e)=> e.includes(':'));
+  // arr.includes(':');
   // Solution code here...
 };
 
@@ -53,6 +55,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
+
   // Solution code here...
 };
 
@@ -65,6 +68,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
+  let newArr = [];
+  for (let i = 1; i < str.length(); i += 2) {
+    newArr.push(str.charAt(i));
+  }
+  return newArr;
+  // let oddIndex =
+  // str.charAt(odd);
   // Solution code here...
 };
 
@@ -75,6 +85,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
+  return arr.filter((e)=> e.includes(':)') ? true : false);
   // Solution code here...
 };
 
