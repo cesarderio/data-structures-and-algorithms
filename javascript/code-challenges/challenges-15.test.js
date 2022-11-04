@@ -118,8 +118,11 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return arr.sort((a, b) => a.price - b.price);
+  return arr.sort((a,b) => a.name.localeCompare(b.name));
+  // return arr.sort((a,b) => a.name.localeCompare(b.name)).sort((a,b)=> a.price - b.price);
+  // return arr.sort((a, b) => a.price - b.price || a.localeCompare(b));
   // Solution code here...
+  // return arr.sort((a,b) => a.localeCompare(b));
 };
 
 /* ------------------------------------------------------------------------------------------------
