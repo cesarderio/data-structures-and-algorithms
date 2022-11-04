@@ -11,6 +11,8 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
+  let reg = /^(Mr|Mrs|Ms|Dr)\.[A-Za-z]+$/g;
+  return arr.map((a)=> (reg.test(a)));
   // Solution code here...
 };
 
@@ -138,6 +140,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
+  return url.includes('https://');
   // Solution code here...
 };
 
