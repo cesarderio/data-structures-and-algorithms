@@ -61,6 +61,8 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
+  // return arr.filter(element => typeof element === 'number');
+  console.log(arr.filter(element => typeof element === 'number'));
 
   // Solution code here...
 };
@@ -91,7 +93,10 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  return arr.filter((e)=> e.includes(':)') ? true : false);
+  let reg = /\:\)/gm;
+  return reg.test(arr);
+
+  // return arr.filter((e)=> e.includes(':)') ? true : false);
   // Solution code here...
 };
 
