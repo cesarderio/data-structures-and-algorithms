@@ -7,12 +7,18 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-  let newArr = [];
-  // return arr.findIndex(arr.reduce((a, b) => a.length <= b.length ? b : a)).findIndex();
-  return arr.indexOf((arr)=>(arr.reduce((a, b) => a.length <= b.length ? b : a)));
-  // console.log(newArr);
   // Solution code here...
+  let longestStr = '';
+  arr.forEach(str => {
+    if(str.length > longestStr.length){
+      longestStr = str;
+    }
+  });
+  return arr.indexOf(longestStr);
 };
+  // return arr.indexOf((arr)=>(arr.reduce((a, b) => a.length <= b.length ? b : a)));
+// return arr.findIndex(arr.reduce((a, b) => a.length <= b.length ? b : a)).findIndex();
+// console.log(newArr);
 
 /*
 
@@ -61,11 +67,13 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // return arr.filter(element => typeof element === 'number');
-  console.log(arr.filter(element => typeof element === 'number'));
-
   // Solution code here...
+  return arr.map(number => `${number.substring(1,4)}${number.substring(6,9)}${number.substring(10)}`);
 };
+
+// return arr.filter(element => typeof element === 'number');
+// console.log(arr.filter(element => typeof element === 'number'));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -76,15 +84,18 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  let newArr = [];
-  for (let i = 1; i < str.length(); i += 2) {
-    newArr.push(str.charAt(i));
-  }
-  return newArr;
-  // let oddIndex =
-  // str.charAt(odd);
   // Solution code here...
+  return str.split('').filter((element, index) => index % 2 === 1).join('');
+
 };
+
+// let newArr = [];
+// for (let i = 1; i < str.length(); i += 2) {
+// newArr.push(str.charAt(i));
+// }
+// return newArr;
+// let oddIndex =
+// str.charAt(odd);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -93,12 +104,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  let reg = /\:\)/gm;
-  return reg.test(arr);
-
-  // return arr.filter((e)=> e.includes(':)') ? true : false);
   // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
+
+// let reg = /\:\)/gm;
+// return reg.test(arr);
+// return arr.filter((e)=> e.includes(':)') ? true : false);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
