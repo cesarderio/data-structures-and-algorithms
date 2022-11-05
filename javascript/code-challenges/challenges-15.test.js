@@ -11,11 +11,13 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  let reg = /^(Mr|Mrs|Ms|Dr)\.[A-Za-z]+$/g;
-  return arr.map((a)=> (reg.test(a)));
   // Solution code here...
+  let reg = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z]+$/;
+  return arr.filter(str => reg.test(str));
 };
 
+// let reg = /^(Mr|Mrs|Ms|Dr)\.[A-Za-z]+$/g;
+// return arr.map((a)=> (reg.test(a)));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -101,7 +103,8 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  return arr.filter((a) => a.mass > 77).map((b) => b = b.name).join(' - ');
+  let luke = arr.find(character => character.name === 'Luke Skywalker');
+  return arr.filter((a) => +a.mass > +luke.mass).map((b) => b = b.name).join(' - ');
   // Solution code here...
 };
 
@@ -120,12 +123,13 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return arr.sort((a,b) => a.name.localeCompare(b.name));
+  // Solution code here...
+  return arr.sort((a,b) => a[property] > b[property] ? 1 : -1);
+};
+  // return arr.sort((a,b) => a.name.localeCompare(b.name));
   // return arr.sort((a,b) => a.name.localeCompare(b.name)).sort((a,b)=> a.price - b.price);
   // return arr.sort((a, b) => a.price - b.price || a.localeCompare(b));
-  // Solution code here...
   // return arr.sort((a,b) => a.localeCompare(b));
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -140,8 +144,10 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  return url.includes('https://');
   // Solution code here...
+  // let reg = /(^https:\/\/)/;
+  // return reg.test(url);
+  return url.includes('https://');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,6 +171,24 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    return board[row1][col1] !== '' && // make sure the cell is not empty
+    board[row1][col1] === board[row2][col2] &&
+    board[row2][col2] === board[row3][col3];
+  };
+
+  if(helpCheck(0,0,0,1,0,2)) return true; // top row
+  if(helpCheck(1,0,1,1,1,2)) return true; // middle row
+  if(helpCheck(2,0,2,1,2,2)) return true; // bottom row
+  //-----------------------
+  if(helpCheck(0,0,1,0,2,0)) return true; // left column
+  if(helpCheck(0,1,1,1,2,1)) return true; // middle column
+  if(helpCheck(0,2,1,2,2,2)) return true; //right column
+  //---------------------
+  if(helpCheck(0,0,1,1,2,2)) return true; // top left to bottom right
+  if(helpCheck(0,2,1,1,2,0)) return true; // top right to bottom left
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
