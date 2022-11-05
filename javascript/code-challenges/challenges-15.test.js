@@ -11,11 +11,13 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  let reg = /^(Mr|Mrs|Ms|Dr)\.[A-Za-z]+$/g;
-  return arr.map((a)=> (reg.test(a)));
   // Solution code here...
+  let reg = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z]+$/;
+  return arr.filter(str => reg.test(str));
 };
 
+// let reg = /^(Mr|Mrs|Ms|Dr)\.[A-Za-z]+$/g;
+// return arr.map((a)=> (reg.test(a)));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -101,7 +103,8 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  return arr.filter((a) => a.mass > 77).map((b) => b = b.name).join(' - ');
+  let luke = arr.find(character => character.name === 'Luke Skywalker');
+  return arr.filter((a) => +a.mass > +luke.mass).map((b) => b = b.name).join(' - ');
   // Solution code here...
 };
 
