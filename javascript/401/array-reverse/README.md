@@ -4,7 +4,7 @@ Write a function called **reverseArray** which takes an array as an argument. Wi
 
 ## Whiteboard Process
 
-![Whiteboard](../Assets/reverseArray.png)
+![Whiteboard](../assets/reverseArray.png)
 
 ## Approach & Efficiency
 
