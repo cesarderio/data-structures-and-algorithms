@@ -11,7 +11,7 @@
 
 (401/array-insert-shift/README.md)
 
-## array-insert-shift - whiteboard code challenge 02
+## array--binary-search - whiteboard code challenge 03
 
 (401/arr-binary-search/README.md)
 
