@@ -5,11 +5,15 @@
 
 ## array-reverse - whiteboard code challenge 01
 
-(./401/array-reverse/README.md)
+(401/array-reverse/README.md)
 
-## array-insert-shift - whiteboard code challenge 01
+## array-insert-shift - whiteboard code challenge 02
 
-(./401/array-insert-shift/README.md)
+(401/array-insert-shift/README.md)
+
+## array-insert-shift - whiteboard code challenge 02
+
+(401/arr-binary-search/README.md)
 
 ### Folder and Challenge Setup
 
