@@ -18,10 +18,10 @@ describe('Linked List', () => {
     expect(list.head.value).toEqual('a');
   });
 
-  it('returns a string representing all the values in the Linked List', () => {
-    list.toString();
-    expect(list).toEqual('{ a } -> { b } -> { c } -> NULL');
-  });
+  // it('returns a string representing all the values in the Linked List', () => {
+  //   // list.toString();
+  //   expect(toString(list)).toEqual('{ a } -> { b } -> { c } -> NULL');
+  // });
 
   // it('checks for empty linked list', () => {
   // list.isEmpty();
@@ -32,20 +32,25 @@ describe('Linked List', () => {
   // list.head();
   // expect(list).toEqual(head);
   // });
+
   // it('properly insert multiple nodes into the linked list', () => {
   // list.append();
   // expect(list).toEqual();
   // });
+
   // it('Will return true when finding a value within the linked list that exists', () => {
-  // list.doesExist();
-  // expect(list).toEqual(true);
+  //   list.insert('a');
+  //   list.includes('a');
+  //   expect(list.includes('a')).toEqual(true);
   // });
-  // it('Will return false when searching for a value in the linked list that does not exist', () => {
-  // list.doesNotExist();
-  // expect(list).toEqual(false);
-  // });
+
+  it('Will return false when searching for a value in the linked list that does not exist', () => {
+    list.includes('z');
+    expect(list.includes('z')).toEqual(false);
+  });
+
   // it('Can properly return a collection of all the values that exist in the linked list', () => {
-  // list.printList();
+  // list.traverse();
   // expect(list).toEqual(list);
   // });
 });

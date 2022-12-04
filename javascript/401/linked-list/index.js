@@ -12,14 +12,10 @@ class LinkedList{
     this.head = null;
   }
 
-  // add a node to front of list/head
   insert(value){
     let node = new Node(value);
-
-    if(!this.head){
-      this.head = node;
-      return;
-    }
+    node.next = this.head;
+    this.head = node;
   }
 
   includes(value){
@@ -54,12 +50,21 @@ class LinkedList{
     let output = '';
 
     while(current){
-      output += `${current.element} -> ${current.next}`;
+      output += `${current.element}${current.next ? ' -> ' : ''}`;
       current = current.next;
     }
     return output;
   }
 
+  traverse(){
+    let current = this.head;
+
+    while(current){
+      // do the thing
+      console.log(current.value);
+      current = current.next;
+    }
+  }
 
 }
 
@@ -68,9 +73,12 @@ list.append('a');
 list.append('b');
 list.append('c');
 
+// console.log(JSON.toString(list));
 
 // console.log(list.stringify('a'));
-console.log(JSON.stringify(list));
-// list.traverse();
+// console.log(JSON.stringify(list.toString()));
 
+console.log('help me');
+// list.traverse();
+list.toString();
 module.exports = LinkedList;
