@@ -51,18 +51,17 @@ class LinkedList{
 
   toString(){
     let current = this.head;
-    let str = '';
+    let output = '';
 
     while(current){
-      str += current.value + '';
+      output += `${current.element} -> ${current.next}`;
       current = current.next;
     }
-    console.log(str);
+    return output;
   }
 
 
 }
-
 
 let list = new LinkedList();
 list.append('a');
