@@ -15,6 +15,10 @@
 
 (401/arr-binary-search/README.md)
 
+## linked-list - code challenge 05
+
+(401/linkd-list/README.md)
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
