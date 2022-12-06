@@ -23,20 +23,27 @@ describe('Linked List', () => {
     expect(JSON.stringify(list.toString())).toEqual('{a} -> {b} -> {c} -> NULL');
   });
 
-  // it('checks for empty linked list', () => {
-  // list.isEmpty();
-  // expect(list).toEqual(NULL);
-  // });
+  it('checks for empty linked list', () => {
+    if(!this.head){
+      return;
+    }
+    expect(list).toEqual('NULL');
+  });
 
   // it('The head properly points to first node in the linked list', () => {
-  // list.head();
-  // expect(list).toEqual(head);
+  //   list.head();
+  //   expect(list).toEqual(head);
   // });
 
-  // it('properly insert multiple nodes into the linked list', () => {
-  // list.append();
-  // expect(list).toEqual();
-  // });
+  it('properly insert multiple nodes into the linked list', () => {
+    list.append('a');
+    list.append('b');
+    list.append('c');
+    expect(list.head.value).toEqual('a');
+    expect(list.head.next.value).toEqual('b');
+    expect(list.head.next.next.value).toEqual('c');
+  });
+
 
   // it('Will return true when finding a value within the linked list that exists', () => {
   //   list.insert('a');
@@ -49,9 +56,19 @@ describe('Linked List', () => {
     expect(list.includes('z')).toEqual(false);
   });
 
-  // it('Can properly return a collection of all the values that exist in the linked list', () => {
-  // list.traverse();
-  // expect(list).toEqual(list);
+  it('Can properly return a collection of all the values that exist in the linked list', () => {
+    list.traverse();
+    expect(list).toEqual(list);
+  });
+
+  it('will insert before given index', () => {
+    list.insertBefore(a, c);
+    expect(list).toEqual(list);
+  });
+
+  // it('will insert after given index', () => {
+  //   list.insertBefore(a, c);
+  //   expect(list).toEqual(list);
   // });
 });
 
