@@ -18,10 +18,10 @@ describe('Linked List', () => {
     expect(list.head.value).toEqual('a');
   });
 
-  // it('returns a string representing all the values in the Linked List', () => {
-  //   // list.toString();
-  //   expect(toString(list)).toEqual('{ a } -> { b } -> { c } -> NULL');
-  // });
+  it('returns a string representing all the values in the Linked List', () => {
+    // list.toString();
+    expect(JSON.stringify(list.toString())).toEqual('{a} -> {b} -> {c} -> NULL');
+  });
 
   // it('checks for empty linked list', () => {
   // list.isEmpty();
