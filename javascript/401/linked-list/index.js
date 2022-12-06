@@ -85,7 +85,7 @@ class LinkedList{
       return;
     }
     let new_node = new Node(newValue);
-    /* 4. Make next of new Node as next of prev_node */
+  // Make next of new Node as next of previous node
     new_node.next = value.next;
     value.next = new_node;
   }
