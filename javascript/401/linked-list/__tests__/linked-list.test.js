@@ -30,10 +30,10 @@ describe('Linked List', () => {
     expect(list).toEqual('NULL');
   });
 
-  // it('The head properly points to first node in the linked list', () => {
-  //   list.head();
-  //   expect(list).toEqual(head);
-  // });
+  it('The head properly points to first node in the linked list', () => {
+    list.head();
+    expect(list).toEqual(list.head.value);
+  });
 
   it('properly insert multiple nodes into the linked list', () => {
     list.append('a');
@@ -44,12 +44,11 @@ describe('Linked List', () => {
     expect(list.head.next.next.value).toEqual('c');
   });
 
-
-  // it('Will return true when finding a value within the linked list that exists', () => {
-  //   list.insert('a');
-  //   list.includes('a');
-  //   expect(list.includes('a')).toEqual(true);
-  // });
+  it('Will return true when finding a value within the linked list that exists', () => {
+    list.insert('a');
+    list.includes('a');
+    expect(list.includes('a')).toEqual(true);
+  });
 
   it('Will return false when searching for a value in the linked list that does not exist', () => {
     list.includes('z');
@@ -62,14 +61,14 @@ describe('Linked List', () => {
   });
 
   it('will insert before given index', () => {
-    list.insertBefore(a, c);
+    list.insertBefore('a', 'c');
     expect(list).toEqual(list);
   });
 
-  // it('will insert after given index', () => {
-  //   list.insertBefore(a, c);
-  //   expect(list).toEqual(list);
-  // });
+  it('will insert after given index', () => {
+    list.insertBefore('a', 'c');
+    expect(list).toEqual(list);
+  });
 });
 
 
