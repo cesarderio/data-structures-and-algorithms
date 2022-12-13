@@ -66,7 +66,7 @@ describe('Queue', () => {
   let queueOne = new Queue();
   it('Can successfully enqueue into a queue', () => {
     queueOne.enqueue('a');
-    expect(front.value).toEqual('a');
+    expect(this.value).toEqual('a');
   });
 
   it('Can successfully enqueue multiple values into a queue', () => {
