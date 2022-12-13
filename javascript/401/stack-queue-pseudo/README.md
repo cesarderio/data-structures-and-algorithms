@@ -3,6 +3,10 @@
 A stack is a data stucture that consists of Nodes. ( A stack of Nodes).
 A Queue is a data structure that consists of Nodes, similar but different; i.e. (A queue can be thought of as a line(line to get into a store for example.).)
 
+## UML
+
+![UML](../assets//stack-queue-pseudo.png)
+
 ### Common stack terms
 
 **PUSH** - Nodes that are put into the *stack* are "pushed" into the *stack*.

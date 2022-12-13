@@ -17,7 +17,19 @@
 
 ## linked-list - code challenge 05
 
-(401/linkd-list/README.md)
+(401/linked-list/README.md)
+
+## linked-list-kth
+
+(401/linked-list-kth/README.md)
+
+## linked-list-zip
+
+(401/linked-list-zip/README.md)
+
+## stack-queue-pseudo
+
+(401/stack-queue-pseudo/README.md)
 
 ### Folder and Challenge Setup
 
