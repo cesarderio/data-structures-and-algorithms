@@ -213,7 +213,7 @@ class Queue {
     return this.items.shift();
   }
 
-  peerk(){
+  peek(){
     return this.items[0];
   }
 
