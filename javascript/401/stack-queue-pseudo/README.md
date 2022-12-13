@@ -41,69 +41,32 @@ A Queue is a data structure that consists of Nodes, similar but different; i.e. 
 
 ## Challenge
 
-New Implementation of Stacks and Queues.
-
-Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+Code Challenge / Algorithm
 
 ## Approach & Efficiency
 
 Big 0 space/time will be dependent on size/length/count of list/stack/queue.
 
-## API
+## Feature Tasks
 
-#### Node
+##### Create a new class called pseudo queue
 
-* Create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
+* Do not use an existing Queue.
 
-#### Stack
+* Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),
 
-* Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+* Internally, utilize 2 **Stack** instances to create and manage the queue
 
-  * This object should be aware of a default empty value assigned to top when the stack is created.
-  * The class should contain the following methods:
+##### Methods
 
-  * **Push**
-    * Arguments: value
-    * Adds a new node with that value to the top of the stack with an O(1) Time performance.
+* Enqueue
 
-  * **Pop**
-    * Arguments: none
-    * Returns: the value from node from the top of the stack
-    * Removes the node from the top of the stack
-    * Should raise exception when called on empty stack
+  * Arguments: value
 
-  * **Peek**
-    * Arguments: none
-    * Returns: Value of the node located at the top of the stack
-    * Should raise exception when called on empty stack
+  * Inserts a **value** into the PseudoQueue, using a *first-in*, *first-out* approach.
 
-  * **isEmpty**
-    * Arguments: none
-    * Returns: Boolean indicating whether or not the stack is empty.
+* Dequeue
 
-#### Queue
+  * Arguments: none
 
-* Create a Queue class that has a front property. It creates an empty Queue when instantiated.
-
-  * This object should be aware of a default empty value assigned to front when the queue is created.
-
-  * The class should contain the following methods:
-
-  * **Enqueue**
-    * Arguments: value
-    * Adds a new node with that value to the back of the queue with an O(1) Time performance.
-
-  * **Dequeue**
-    * Arguments: none
-    * Returns: the value from node from the front of the queue
-      *Removes the node from the front of the queue
-      *Should raise exception when called on empty queue
-
-  * **Peek**
-    * Arguments: none
-    * Returns: Value of the node located at the front of the queue
-    * Should raise exception when called on empty stack
-
-  * **isEmpty**
-    * Arguments: none
-    * Returns: Boolean indicating whether or not the queue is empty
+  * Extracts a **value** from the PseudoQueue, using a first-in, first-out approach.
