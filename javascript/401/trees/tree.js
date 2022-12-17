@@ -89,16 +89,19 @@ class BinarySearchTree extends Tree{
     }
   }
   contains(key, value){
-    if(this.value === value){
-      return this;
-    }
-    if(value < this.value && this.left){
-      return this.left.contains(value);
-    }else if(value > this.value && this.right){
-      return this.right.contains(value);
-    }else{
-      return null;
-    }
+
+    this.value === value ? true : false;
+
+    // if(this.value === value){
+    //   return this;
+    // }
+    // if(value < this.value && this.left){
+    //   return this.left.contains(value);
+    // }else if(value > this.value && this.right){
+    //   return this.right.contains(value);
+    // }else{
+    //   return null;
+    // }
   }
 }
 
