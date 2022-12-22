@@ -256,4 +256,4 @@ console.log(JSON.stringify(list.toString()));
 // console.log('help me');
 // list.traverse();
 list.toString();
-module.exports = LinkedList;
+module.exports = { LinkedList, Node, Queue };
