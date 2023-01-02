@@ -221,15 +221,15 @@ class Queue {
 // function checker(string1, string2) {
 //   const combined = string1 + string2;
 //   return combined === '()' || combined === '[]' || combined === '{}';
-}
+// }
 
 
 module.exports = { LinkedList, Node, Queue };
 
 
-console.log(validateBrackets('()'));
-console.log(validateBrackets('{code{{]'));
-console.log(validateBrackets('()'));
+// console.log(validateBrackets('()'));
+// console.log(validateBrackets('{code{{]'));
+// console.log(validateBrackets('()'));
 
 
 // validateBrackets('[{()Code}Fellows}');
@@ -237,4 +237,4 @@ console.log(validateBrackets('()'));
 // validateBrackets('()');
 
 
-module.exports = validateBrackets();
+// module.exports = validateBrackets();
