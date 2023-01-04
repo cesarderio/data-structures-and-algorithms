@@ -50,13 +50,11 @@ function logArray(A, size) {
   for (var i = 0; i < size; i++) console.log(A[i] + " ");
 }
 
-let arr = [12, 11, 13, 5, 6, 7];
+let arr = [8, 4, 23, 42, 16, 15];
 let arr_size = arr.length;
 
-console.log("Array is <br>");
 logArray(arr, arr_size);
 
 mergeSort(arr, 0, arr_size - 1);
 
-console.log("<br>Sorted array is <br>");
 logArray(arr, arr_size);
