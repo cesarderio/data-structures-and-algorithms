@@ -47,7 +47,7 @@ function mergeSort(arr, l, r) {
 }
 
 function logArray(A, size) {
-  for (var i = 0; i < size; i++) console.log(A[i] + " ");
+  for (var i = 0; i < size; i++) console.log(A[i] + ' ');
 }
 
 let arr = [8, 4, 23, 42, 16, 15];
