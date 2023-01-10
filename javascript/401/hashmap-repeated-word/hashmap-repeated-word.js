@@ -38,7 +38,7 @@ function repeatedWord(str) {
     }
   }
 }
-
+module.exports = repeatedWord;
 
 repeatedWord(aStr);
 repeatedWord(itStr);
