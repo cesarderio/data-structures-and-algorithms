@@ -27,9 +27,45 @@
 
 (401/linked-list-zip/README.md)
 
+## mergeSort
+
+(401/mergeSort/README.md)
+
+## Selection-Sort
+
+(401/Selection-Sort/README.md)
+
+## Sorting-comparisons
+
+(401/Sorting-comparisons/README.md)
+
+## stack-and-queue
+
+(401/stack-and-queue/README.md)
+
+## stack-queue-animal-shelter
+
+(401/stack-queue-animal-shelter/README.md)
+
+## stack-queue-brackets
+
+(401/stack-queue-brackets/README.md)
+
 ## stack-queue-pseudo
 
 (401/stack-queue-pseudo/README.md)
+
+## tree-breadth-traversal
+
+(401/treebreadth-traversal/README.md)
+
+## tree-max
+
+(401/tree-max/README.md)
+
+## trees
+
+(401/trees/README.md)
 
 ### Folder and Challenge Setup
 
