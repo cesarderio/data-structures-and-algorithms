@@ -3,69 +3,37 @@
 
 ## Language: `JavaScript`
 
-## array-reverse - whiteboard code challenge 01
+## [array-reverse - whiteboard code challenge 01](401/array-reverse/README.md)
 
-(401/array-reverse/README.md)
+## [array-insert-shift - whiteboard code challenge 02](401/array-insert-shift/README.md)
 
-## array-insert-shift - whiteboard code challenge 02
+## [array--binary-search - whiteboard code challenge 03](401/arr-binary-search/README.md)
 
-(401/array-insert-shift/README.md)
+## [linked-list - code challenge 05](401/linked-list/README.md)
 
-## array--binary-search - whiteboard code challenge 03
+## [linked-list-kth](401/linked-list-kth/README.md)
 
-(401/arr-binary-search/README.md)
+## [linked-list-zip](401/linked-list-zip/README.md)
 
-## linked-list - code challenge 05
+## [mergeSort](401/mergeSort/README.md)
 
-(401/linked-list/README.md)
+## [selectionSort](401/Selection-Sort/README.md)
 
-## linked-list-kth
+## [sortingComparisons](401/Sorting-comparisons/README.md)
 
-(401/linked-list-kth/README.md)
+## [stack-and-queue](401/stack-and-queue/README.md)
 
-## linked-list-zip
+## [stack-queue-animal-shelter](401/stack-queue-animal-shelter/README.md)
 
-(401/linked-list-zip/README.md)
+## [stack-queue-brackets](401/stack-queue-brackets/README.md)
 
-## mergeSort
+## [stack-queue-pseudo](401/stack-queue-pseudo/README.md)
 
-(401/mergeSort/README.md)
+## [tree-breadth-traversal](401/treebreadth-traversal/README.md)
 
-## Selection-Sort
+## [tree-max](401/tree-max/README.md)
 
-(401/Selection-Sort/README.md)
-
-## Sorting-comparisons
-
-(401/Sorting-comparisons/README.md)
-
-## stack-and-queue
-
-(401/stack-and-queue/README.md)
-
-## stack-queue-animal-shelter
-
-(401/stack-queue-animal-shelter/README.md)
-
-## stack-queue-brackets
-
-(401/stack-queue-brackets/README.md)
-
-## stack-queue-pseudo
-
-(401/stack-queue-pseudo/README.md)
-
-## tree-breadth-traversal
-
-(401/treebreadth-traversal/README.md)
-
-## tree-max
-
-(401/tree-max/README.md)
-
-## trees
-
-(401/trees/README.md)
+## [trees](401/trees/README.md)
 
 ### Folder and Challenge Setup
 
