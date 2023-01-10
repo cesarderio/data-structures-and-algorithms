@@ -15,8 +15,8 @@ describe('Hash Table', () => {
   });
 
   it('Successfully returns null for a key that does not exist in the hashtable', () => {
-
-    expect().toEqual();
+    const hashTable = new HashTable(10);
+    expect(hashTable.get('key')).toBe(null);
   });
 
   it('Successfully returns a list of all unique keys that exist in the hashtable', () => {
@@ -35,8 +35,8 @@ describe('Hash Table', () => {
   });
 
   it('Successfully hash a key to an in-range value', () => {
-
-    expect().toEqual();
+    const hashTable = new HashTable(10);
+    expect(hashTable.hash('key')).toBeLessThan(10);
   });
 
 });

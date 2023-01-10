@@ -1,6 +1,8 @@
 'use strict';
 
-const { LinkedList } = require('../linked-list/index');
+const { val } = require('cheerio/lib/api/attributes');
+
+// const { LinkedList } = require('../linked-list/index');
 
 class HashTable{
   constructor(size){
@@ -19,54 +21,69 @@ class HashTable{
 
   set(key, value){
     let position = this.hash(key);
-    // square bracket notation allow me to create an object property dynamically from a variable
-    let data = {[key]: value};
-
-    // I am choosing to show how to store in a linked list - your implementation will be different
-    // using a linked list: does the bucket exist? If it does; add to existing bucket.
-    // If it does not exist, create bucket and add key/value to bucket
-    if(this.buckets[position]){
-      let bucket = this.buckets[position];
-      bucket.add(data);
+    if(!this.buckets[position]){
+      this.buckets[position] = { [key]: value};
     } else{
-      let bucket = new LinkedList();
-      bucket.add(data);
-      this.buckets[position] = bucket;
+      this.buckets[position][key] = value;
     }
   }
+  // set(key, value){
+  //   let position = this.hash(key);
+  //   // square bracket notation allow me to create an object property dynamically from a variable
+  //   let data = {[key]: value};
+
+  //   // I am choosing to show how to store in a linked list - your implementation will be different
+  //   // using a linked list: does the bucket exist? If it does; add to existing bucket.
+  //   // If it does not exist, create bucket and add key/value to bucket
+  //   if(this.buckets[position]){
+  //     let bucket = this.buckets[position];
+  //     bucket.add(data);
+  //   } else{
+  //     // let bucket = new LinkedList();
+  //     bucket.add(data);
+  //     this.buckets[position] = bucket;
+  //   }
+  // }
 
   get(key){
     let position = this.hash(key);
-
+    return this.buckets[position] ? this.buckets[position][key] : null;
     // your implementation will be different
     // This demo needs to interact with the linked list
 
-    if(this.buckets[position]){
-      let bucket = this.buckets[position];
-      let value = bucket.head.value[key];
-      // let value = bucket.value[key];
-      return value;
-    }
-
+    // if(this.buckets[position]){
+    //   let bucket = this.buckets[position];
+    //   let value = bucket.head.value[key];
+    //   // let value = bucket.value[key];
+    //   return value;
+    // }
   }
 
   has(key){
     let position = this.hash(key);
 
-    if(this.buckets[position]){
-      return true;
-    }
-
+    return this.buckets[position] && this.buckets[position][key] ? true : false;
+    // if(this.buckets[position]){
+    //   return true;
+    // }
   }
 
   key(){
+    let keys = [];
+    this.buckets.forEach((a) => {
+      if(a){
+        keys.push(...Object.keys(a));
+      }
+    });
+    return keys;
     // Object.keys(this.buckets)
-    return Object.keys(this.buckets);
+    // return Object.keys(this.buckets);
   }
 
 
 
 }
+module.exports = HashTable;
 
 
 let table = new HashTable(1024);
