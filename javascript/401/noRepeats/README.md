@@ -7,6 +7,8 @@ Write a function that will determine if the string is full of unique characters.
 ### Solution
 
 ![Whiteboard](../assets/noRepeats.png)
+![Rubric](../assets/CodeChallenge34num2.png)
+[Rubric](https://docs.google.com/spreadsheets/d/1ceK-Ymz2vyB9m-oudELVxZpOLdjMiOPIpas7__vpqBE/edit#gid=0)
 
 ### Step through process
 
