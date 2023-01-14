@@ -90,7 +90,6 @@ class Graph {
   }
 }
 
-
 const graph = new Graph();
 
 const A = graph.addVertex('A');
@@ -117,3 +116,6 @@ graph.breadthFirst(A, console.log);
 console.log('-------------------');
 
 graph.depthFirst(A, console.log);
+
+
+module.exports = { Vertex, Edge, Graph };
