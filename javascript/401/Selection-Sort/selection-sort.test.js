@@ -1,17 +1,36 @@
-'use strict';
+const { Movies } = require('./movies');
+const { sortTitle, sortYear } = require('./selection-sort');
 
-const {selectionSort} = require('./selection-sort.js');
 describe('Selection Sort', () => {
-  it('correctly traverses and sorts array of integers', () => {
- 
-    expect(console.log(selectionSort(arr))).toEqual([4, 8, 15, 16, 23, 42]);
-  
+  it('can sort movies by title', () => {
+    const movies = sortTitle(Movies);
+    expect(movies.map((m) => m.title)).toEqual([
+      'Beetlejuice',
+      'City of God',
+      'The Cotton Club',
+      'Crocodile Dundee',
+      'The Intouchables',
+      'Memento',
+      'Ratatouille',
+      'The Shawshank Redemption',
+      'Stardust',
+      'Valkyrie',
+    ]);
   });
 
-  // it('traverse works as expected', () => {
-  //   let list = new LinkedList();
-  //   list.add('a');
-  //   list.add('b');
-  //   list.add('c');
-  //   expect(list.toString()).toEqual(`{c} -> {b} -> {1} -> NULL`);
-  // });
+  it('can sort movies by year', () => {
+    const movies = sortYear(Movies);
+    expect(movies.map((m) => m.title)).toEqual([
+      'The Untouchables',
+      'Valkyrie',
+      'Ratatouille',
+      'Stardust',
+      'City of God',
+      'Memento',
+      'The Shawshank Redemption',
+      'Beetlejuice',
+      'Crocodile Dundee',
+      'The Cotton Club',
+    ]);
+  });
+});
