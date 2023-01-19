@@ -65,7 +65,7 @@ class Tree{
 
   }
 
-}
+
 
 
 class BinarySearchTree extends Tree{
