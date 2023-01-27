@@ -1,13 +1,13 @@
 'use strict';
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList{
-  constructor(){
+class LinkedList {
+  constructor() {
     this.head = null;
     this.size = 0;
   }
@@ -18,15 +18,14 @@ class LinkedList{
   //     n = n.next;
   //   }
   // }
-  insert(value){
+  insert(value) {
     let node = new Node(value);
     node.next = this.head;
     this.head = node;
   }
 
-  insertBefore(value, newValue){
-
-    if (value < 0 || value > this.size){
+  insertBefore(value, newValue) {
+    if (value < 0 || value > this.size) {
       return console.log('Please enter a valid index.');
     } else {
       let node = new Node(newValue);
@@ -76,70 +75,65 @@ class LinkedList{
   //   }
   // }
 
-  insertAfter(value, newValue){
-
-    if (value === null)
-    {
+  insertAfter(value, newValue) {
+    if (value === null) {
       document.write('The given node cannot be null');
       return;
     }
     let new_node = new Node(newValue);
-  // Make next of new Node as next of previous node
+    // Make next of new Node as next of previous node
     new_node.next = value.next;
     value.next = new_node;
   }
 
-  includes(value){
+  includes(value) {
     let current = this.head;
 
-    while(!current){
-      if (current === value){
+    while (!current) {
+      if (current === value) {
         return true;
       }
     }
     return false;
   }
 
-  append(value){
+  append(value) {
     let node = new Node(value);
 
-    if(!this.head){
+    if (!this.head) {
       this.head = node;
       return;
     }
 
     let current = this.head;
 
-    while(current.next){
+    while (current.next) {
       current = current.next;
     }
     current.next = node;
   }
 
-  toString(){
+  toString() {
     let current = this.head;
     let output = '';
 
-    while(current){
+    while (current) {
       output += `{${current.value}}${current.next ? ' -> ' : ''}`;
       current = current.next;
     }
     return output;
   }
 
-  traverse(){
+  traverse() {
     let current = this.head;
 
-    while(current){
+    while (current) {
       // do the thing
       console.log(current.value);
       current = current.next;
     }
   }
-
 }
-
-
 
 let list = new LinkedList();
 list.append('a');
